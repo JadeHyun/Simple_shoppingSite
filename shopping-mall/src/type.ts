@@ -1,6 +1,6 @@
 export type Rating = {
-  count: number;
   rate: number;
+  count: number;
 };
 
 export type Product = {
