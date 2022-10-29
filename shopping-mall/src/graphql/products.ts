@@ -2,11 +2,15 @@ import { gql } from "graphql-tag";
 
 export type PRODUCT = {
   id: string;
-  imageURL: string;
+  imageUrl: string;
   price: number;
   title: string;
   description: string;
   createAt: string;
+};
+
+export type PRODUCTS = {
+  products: PRODUCT[];
 };
 
 const GET_PRODUCTS = gql`
