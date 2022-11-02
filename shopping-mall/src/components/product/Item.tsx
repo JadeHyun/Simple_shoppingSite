@@ -1,5 +1,5 @@
 // import { Product } from "../../type";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation } from "react-query";
 import { Link } from "react-router-dom";
 import { ADD_CART } from "../../graphql/cart";
 import { Product } from "../../graphql/products";
@@ -13,9 +13,9 @@ const ProductItems = ({
   description,
   createAt,
 }: Product) => {
-  // const { mutate: addCart } = useMutation((id: string) =>
-  //   graphqlFetcher(ADD_CART, { id })
-  // );
+  const { mutate: addCart } = useMutation((id: string) =>
+    graphqlFetcher(ADD_CART, { id })
+  );
   return (
     <li className="product-item">
       <Link to={`/products/${id}`}>
@@ -27,9 +27,9 @@ const ProductItems = ({
         />
         <span>${price}</span>
       </Link>
-      {/* <button className="product_item_add-cart" onClick={() => addCart(id)}>
+      <button className="product_item_add-cart" onClick={() => addCart(id)}>
         담기
-      </button> */}
+      </button>
     </li>
   );
 };

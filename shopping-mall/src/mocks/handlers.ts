@@ -28,7 +28,7 @@ export const handlers = [
   }),
 
   graphql.query(GET_CART, (req, res, ctx) => {
-    return res();
+    return res(ctx.data(cartData));
   }),
 
   graphql.mutation(ADD_CART, (req, res, ctx) => {
