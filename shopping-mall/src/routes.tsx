@@ -1,6 +1,6 @@
 import React from "react";
 import GlobalLayout from "./pages/_layout";
-import { lazy } from "react";
+// import { lazy } from "react";
 
 const Index = React.lazy(() => import("./pages/index"));
 const CartIndex = React.lazy(() => import("./pages/cart"));

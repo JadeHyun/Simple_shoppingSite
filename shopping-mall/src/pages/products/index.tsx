@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import ProductItems from "../../components/product/Item";
-import GET_PRODUCTS, { Products } from "../../graphql/products";
+import { Products, GET_PRODUCTS } from "../../graphql/products";
 import { graphqlFetcher, QueryKeys } from "../../queryClient";
 
 const ProductList = () => {

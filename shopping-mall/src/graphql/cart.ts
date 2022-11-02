@@ -1,6 +1,6 @@
 import { gql } from "graphql-tag";
 
-export type Cart = {
+export type CartType = {
   id: string;
   imageUrl: string;
   price: number;

@@ -13,7 +13,7 @@ export type Products = {
   products: Product[];
 };
 
-const GET_PRODUCTS = gql`
+export const GET_PRODUCTS = gql`
   query GET_PRODUCTS {
     id
     imageUrl
@@ -35,4 +35,4 @@ export const GET_PRODUCT = gql`
   }
 `;
 
-export default GET_PRODUCTS;
+// export default GET_PRODUCTS;

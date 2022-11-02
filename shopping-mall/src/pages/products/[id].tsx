@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 
 import ProductDetail from "../../components/product/detail";
-import GET_PRODUCTS, { GET_PRODUCT } from "../../graphql/products";
+import { GET_PRODUCT } from "../../graphql/products";
 import { QueryKeys, graphqlFetcher } from "../../queryClient";
 import { Product } from "../../graphql/products";
 
