@@ -1,5 +1,5 @@
 import { QueryClient } from "react-query";
-import { request } from "graphql-request";
+import { request, RequestDocument } from "graphql-request";
 // import { getTodos, postTodo } from "../my-api";
 
 type AnyOBJ = { [key: string]: any };
@@ -37,12 +37,12 @@ export const restFetcher = async ({
   params?: AnyOBJ;
 }) => {
   try {
-    let url = `${BASE_API}${path}`;
+    let url = `${BASE_URL}${path}`;
     const fetchOption: RequestInit = {
       method,
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": BASE_API,
+        "Access-Control-Allow-Origin": BASE_URL,
       },
     };
 

@@ -1,8 +1,9 @@
 // import { Product } from "../../type";
+import { useMutation } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { ADD_CART } from "../../graphql/cart";
 import { Product } from "../../graphql/products";
-import { cartItemSelector } from "../../recoils/cart";
+import { graphqlFetcher } from "../../queryClient";
 
 const ProductItems = ({
   id,
@@ -12,8 +13,9 @@ const ProductItems = ({
   description,
   createAt,
 }: Product) => {
-  const [cartAmount, setCartAmount] = useRecoilState(cartItemSelector(id));
-  const addToCart = () => setCartAmount((prev) => (prev || 0) + 1);
+  // const { mutate: addCart } = useMutation((id: string) =>
+  //   graphqlFetcher(ADD_CART, { id })
+  // );
   return (
     <li className="product-item">
       <Link to={`/products/${id}`}>
@@ -25,10 +27,9 @@ const ProductItems = ({
         />
         <span>${price}</span>
       </Link>
-      <button className="product_item_add-cart" onClick={addToCart}>
+      {/* <button className="product_item_add-cart" onClick={() => addCart(id)}>
         담기
-      </button>
-      <span>{cartAmount || 0}</span>
+      </button> */}
     </li>
   );
 };
