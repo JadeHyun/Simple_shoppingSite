@@ -2,6 +2,7 @@ import { SyntheticEvent, forwardRef, ForwardedRef } from "react";
 import { useMutation } from "react-query";
 import { CartType, DELETE_CART, UPDATE_CART } from "../../graphql/cart";
 import { getClient, graphqlFetcher, QueryKeys } from "../../queryClient";
+import ItemData from "./itemData";
 
 const CartItem = (
   { id, imageUrl, price, title, amount }: CartType,
@@ -66,9 +67,7 @@ const CartItem = (
         name={`select-item`}
         ref={ref}
       />
-      <img className="cart-item_image" src={imageUrl} alt="더미데이터 이미지" />
-      <p className="cart-item_price"> {price}</p>
-      <p className="cart-item_title"> {title}</p>
+      <ItemData imageUrl={imageUrl} price={price} title={title} />
       <input
         type="number"
         className="cart-item_amount"

@@ -5,6 +5,11 @@ body {
   margin: 0px;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 #root {
   max-width: 900px;
   margin: 0 auto;
