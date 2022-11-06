@@ -1,6 +1,6 @@
+import { useRef, SyntheticEvent, createRef } from "react";
 import { CartType } from "../../graphql/cart";
 import CartItem from "./item";
-import { useRef, SyntheticEvent, createRef } from "react";
 
 const CartList = ({ items }: { items: CartType[] }) => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -8,6 +8,10 @@ const CartList = ({ items }: { items: CartType[] }) => {
 
   const handleCheckboxChanged = (e: SyntheticEvent) => {
     if (!formRef.current) return;
+
+    const checkboxes = formRef.current.querySelectorAll<HTMLInputElement>(
+      ".cart-item_checkbox"
+    );
 
     const targetInput = e.target as HTMLInputElement;
     const data = new FormData(formRef.current);

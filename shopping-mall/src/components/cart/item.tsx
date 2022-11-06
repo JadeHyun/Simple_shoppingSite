@@ -64,6 +64,7 @@ const CartItem = (
         className="cart-item_checkbox"
         type="checkbox"
         name={`select-item`}
+        ref={ref}
       />
       <img className="cart-item_image" src={imageUrl} alt="더미데이터 이미지" />
       <p className="cart-item_price"> {price}</p>
