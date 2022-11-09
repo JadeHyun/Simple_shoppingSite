@@ -23,7 +23,7 @@ const WillPay = ({
     <div className="cart-willpay">
       <ul>
         {checkItems.map(({ imageUrl, price, title, id, amount }) => (
-          <li>
+          <li key={id}>
             <ItemData
               imageUrl={imageUrl}
               price={price}
