@@ -9,19 +9,13 @@ import { useMutation } from "react-query";
 import { graphqlFetcher } from "../../queryClient";
 import { EXECUTE_PAY } from "../../graphql/payment";
 
-type PayInfo = {
-  id: string;
-  amount: number;
-};
-
-type PaymentInfos = PayInfo[];
+type PaymentInfos = string[];
 
 const Payment = () => {
   const navigate = useNavigate();
   const [checkedCartDate, setCheckedCartData] =
     useRecoilState(checkedCartState);
   const [modalShown, toggleModal] = useState(false);
-
   const { mutate: executePay } = useMutation((payInfos: PaymentInfos) =>
     graphqlFetcher(EXECUTE_PAY, payInfos)
   );
@@ -31,11 +25,10 @@ const Payment = () => {
   };
 
   const proceed = () => {
-    //결제진행!
-    const payInfos = checkedCartDate.map(({ id, amount }) => ({ id, amount }));
+    const payInfos = checkedCartDate.map(({ id }) => id);
     executePay(payInfos);
     setCheckedCartData([]);
-    navigate("/products", { replace: true });
+    // navigate("/products", { replace: true });
   };
 
   const cancel = () => {
