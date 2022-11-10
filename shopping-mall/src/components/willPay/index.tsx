@@ -39,7 +39,7 @@ const WillPay = ({
         ))}
       </ul>
       <p>총예상 결제액{totalPrice}</p>
-      <button onClick={handleSubmit}>결제하기</button>
+      <button onClick={handleSubmit}>{submitTitle}</button>
     </div>
   );
 };
