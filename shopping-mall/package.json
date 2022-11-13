@@ -9,7 +9,8 @@
     "server"
   ],
   "scripts": {
-    "client": "npm workspace client dev"
+    "client": "npm workspace client dev",
+    "server": "npm workspace server dev"
   },
   "author": "",
   "license": "MIT"

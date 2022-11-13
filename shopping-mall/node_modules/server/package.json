@@ -1,24 +1,25 @@
 {
   "name": "server",
-  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@tsconfig/node16": "^1.0.3",
     "apollo-server": "^3.11.1",
     "apollo-server-express": "^3.11.1",
     "express": "^4.18.2",
     "graphql": "^16.6.0",
     "typescript": "^4.8.4",
-    "uuid": "^9.0.0"
-  },
-  "devDependencies": {
+    "uuid": "^9.0.0",
     "@types/node": "^18.11.9",
     "@types/uuid": "^8.3.4",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1"
   },
+  "devDependencies": {},
   "scripts": {
-    "dev": "nodemon --exec 'ts-node .src/index.js'"
+    "start": "npm run dev",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

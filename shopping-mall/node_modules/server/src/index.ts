@@ -6,12 +6,6 @@ import resolvers from "./resolvers";
 (async () => {
   const server = new ApolloServer({ typeDefs: schema, resolvers });
 
-  /*
-  typeDefs:schema,
-  resolvers,
-
-*/
-
   const app = express();
   await server.start();
   server.applyMiddleware({
@@ -22,5 +16,7 @@ import resolvers from "./resolvers";
       credentials: true,
     },
   });
-  await app.listen({ port: 8000 });
+  await app.listen({ port: 8000 }, function () {
+    console.log("listening on 8000");
+  });
 })();
